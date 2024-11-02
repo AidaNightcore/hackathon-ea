@@ -47,9 +47,9 @@ const LoadingPassengers = () => {
         >
          <Grid container spacing={2} sx={{ maxWidth: 300, mt: 10, mb: 5, ml: 5 }}>
           <Avatar sx={{ bgcolor: '#ccc', width: 60, height: 60, mb: 2 }} />
-          <Typography variant="h6" sx={{ ml: 2, mt: 2 }}>
-            Mircea Gheorghe
-          </Typography>
+          <Typography variant="h6" sx={{ color: 'green' ,mt:2,ml:2}}>
+      Mircea Popescu
+    </Typography>
         </Grid>
           <Typography variant="h5" color="textSecondary">
           The client is at the location.

@@ -28,7 +28,7 @@ def get_parking_space(parking_id):
     parking_space = ParkingSpace.load_from_db(db_manager, parking_id)
 
     if parking_space:
-        # Convert the ParkingSpace object to a dictionary for JSON serialization
+        
         parking_space_data = {
             "id": parking_space.id,
             "owner_email": parking_space.owner_email,

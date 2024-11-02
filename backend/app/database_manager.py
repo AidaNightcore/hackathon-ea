@@ -1,5 +1,5 @@
 import sqlite3
-# manages the database connection and queries
+
 
 class DatabaseManager:
     def __init__(self, db_name="database.db"):
