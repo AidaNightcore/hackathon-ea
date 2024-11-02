@@ -18,8 +18,8 @@ const LoginScreen = () => {
         
       }}
     >
-      <Typography variant="h3" sx={{ mb: 1 , mt:20}}>
-        App name title
+      <Typography variant="h4" sx={{ mb: 1 , mt:20}}>
+        ParkCheap GoSplit
       </Typography>
       <Typography variant="h5" sx={{ mb: 4 }}>
         Let’s start

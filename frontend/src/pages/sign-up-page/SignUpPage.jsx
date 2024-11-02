@@ -5,6 +5,12 @@ import { Box, Typography, Button, TextField, Avatar } from '@mui/material';
 const SignUpPage = ({ onLogin }) => {
   return (
     <Box
+    sx={{
+      width: '100vw',
+      height: '100vh',
+      background: 'linear-gradient(to bottom, #673AB7, #512DA8)'
+    }}>
+    <Box
       sx={{
         display: 'flex',
         alignItems: 'center',
@@ -14,25 +20,40 @@ const SignUpPage = ({ onLogin }) => {
         textAlign: 'center',
       }}
     >
-      <Avatar sx={{ width: 100, height: 100, bgcolor: '#ccc', mb: 4 }} />
-      <Box sx={{ width: '80%', maxWidth: 300 }}>
+      <Avatar sx={{ width: 200, height: 200, bgcolor: '#ccc', mb: 4, mt:10 }} />
+      <Box sx={{ width: '100%', maxWidth: 300 }}>
         <TextField
           label="Name"
           fullWidth
           margin="normal"
           variant="outlined"
+          sx={{
+            bgcolor: 'white', 
+            borderColor: 'primary.main',
+            borderRadius: '10px'
+        }}
         />
         <TextField
           label="Phone number"
           fullWidth
           margin="normal"
           variant="outlined"
+          sx={{
+            bgcolor: 'white', 
+            borderColor: 'primary.main',
+            borderRadius: '10px'
+        }}
         />
         <TextField
           label="Email Address"
           fullWidth
           margin="normal"
           variant="outlined"
+          sx={{
+            bgcolor: 'white', 
+            borderColor: 'primary.main',
+            borderRadius: '10px'
+        }}
         />
         <TextField
           label="Password"
@@ -40,6 +61,11 @@ const SignUpPage = ({ onLogin }) => {
           fullWidth
           margin="normal"
           variant="outlined"
+          sx={{
+            bgcolor: 'white', 
+            borderColor: 'primary.main',
+            borderRadius: '10px'
+        }}
         />
         <Button
           variant="contained"
@@ -59,6 +85,7 @@ const SignUpPage = ({ onLogin }) => {
           Already have an account? Log in
         </Button>
       </Box>
+    </Box>
     </Box>
   );
 };

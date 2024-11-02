@@ -3,7 +3,14 @@ import React from 'react';
 import { Box, TextField, Typography, Button, Switch, Avatar } from '@mui/material';
 
 const RegisterParking = () => {
+    
   return (
+    <Box
+    sx={{
+      width: '100vw',
+      height: '100vh',
+      background: 'linear-gradient(to bottom, #673AB7, #512DA8)'
+    }}>
     <Box
       sx={{
         display: 'flex',
@@ -28,6 +35,7 @@ const RegisterParking = () => {
           fullWidth
           margin="normal"
           variant="outlined"
+          
         />
         <TextField
           label="Observations"
@@ -59,6 +67,7 @@ const RegisterParking = () => {
           Register parking lot
         </Button>
       </Box>
+    </Box>
     </Box>
   );
 };

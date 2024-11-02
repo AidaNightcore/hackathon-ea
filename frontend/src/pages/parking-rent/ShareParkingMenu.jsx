@@ -10,8 +10,21 @@ const ShareParkingMenu = () => {
       setStatus(newStatus);
     }
   };
+  const parkingLocations = [
+    { address: "Strada Margeanului 23, Bucharest", parkingNumber: "Parking #16" },
+    { address: "Calea Victoriei 89, Bucharest", parkingNumber: "Parking #82" },
+    { address: "Calea Bucuresti, Bucharest", parkingNumber: "Parking #47" },
+    { address: "Valea Ialomitei 6, Bucharest", parkingNumber: "Parking #28" },
+    { address: "Strada Moinesti 36, Bucharest", parkingNumber: "Parking #37" },
+  ];
 
   return (
+    <Box
+    sx={{
+      width: '100vw',
+      height: '100vh',
+      background: 'linear-gradient(to bottom, #673AB7, #512DA8)'
+    }}>
     <Box
       sx={{
         display: 'flex',
@@ -23,14 +36,18 @@ const ShareParkingMenu = () => {
         padding: 3,
       }}
     >
-      <Typography variant="h5" sx={{ mb: 4 }}>
+      <Typography variant="h4" sx={{ mb: 4, mt:10 }}>
         Your registered parking lots
       </Typography>
       <ToggleButtonGroup
         value={status}
         exclusive
         onChange={handleStatusChange}
-        sx={{ mb: 3 }}
+        sx={{
+            bgcolor: 'white',
+            borderColor: 'primary.main',
+            borderRadius: '10px',
+          }}
       >
         <ToggleButton value="active" sx={{ width: 100 }} color="success">
           Active
@@ -39,15 +56,35 @@ const ShareParkingMenu = () => {
           Inactive
         </ToggleButton>
       </ToggleButtonGroup>
-      <Box sx={{ width: '100%', maxWidth: 300, mb: 2 }}>
-        {/* Display parking slots here */}
-        <Box sx={{ height: 50, bgcolor: '#fff', mb: 1, borderRadius: 1 }} />
-        <Box sx={{ height: 50, bgcolor: '#fff', mb: 1, borderRadius: 1 }} />
-        <Box sx={{ height: 50, bgcolor: '#fff', mb: 1, borderRadius: 1 }} />
-      </Box>
-      <Button variant="contained" color="success" fullWidth>
-        Register a new space?
-      </Button>
+      <Box sx={{ width: '100%', mt: 10 }}>
+                {parkingLocations.map((location, index) => (
+                  <Button
+                    key={index}
+                    variant="contained"
+                    sx={{
+                      width: '100%',
+                      height: 50,
+                      bgcolor: '#fff',
+                      color: 'black',
+                      mb: 1,
+                      borderRadius: 1,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'flex-start',
+                      textAlign: 'left',
+                      padding: 1,
+                    }}
+                  >
+                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                      {location.address}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary">
+                      {location.parkingNumber}
+                    </Typography>
+                  </Button>
+                ))}
+              </Box>
+    </Box>
     </Box>
   );
 };

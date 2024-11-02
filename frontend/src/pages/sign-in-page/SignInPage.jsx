@@ -24,13 +24,18 @@ const SignInPage = ({ onLogin, onSignUp }) => {
         textAlign: 'center',
       }}
     >
-      <Avatar sx={{ width: 150, height: 150, bgcolor: '#ccc', mb: 4, mt:10 }} />
+      <Avatar sx={{ width: 200, height: 200, bgcolor: '#ccc', mb: 4, mt:10 }} />
       <Box sx={{ width: '80%', maxWidth: 300,  }}>
         <TextField
           label="Email Address"
           fullWidth
           margin="normal"
           variant="outlined"
+          sx={{
+            bgcolor: 'white', 
+            borderColor: 'primary.main',
+            borderRadius: '10px'
+        }}
         />
         <TextField
           label="Password"
@@ -38,10 +43,15 @@ const SignInPage = ({ onLogin, onSignUp }) => {
           fullWidth
           margin="normal"
           variant="outlined"
+          sx={{
+            bgcolor: 'white', 
+            borderColor: 'primary.main',
+            borderRadius: '10px'
+        }}
         />
         <Typography
           variant="body2"
-          color="textSecondary"
+          color="white"
           sx={{ textAlign: 'right', mb: 2 }}
         >
           Forgot Password?
