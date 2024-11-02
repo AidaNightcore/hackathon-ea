@@ -22,6 +22,27 @@ def create_parking_space():
     return jsonify({"message": "Parking space created successfully"}), 201
 
 
+@parking_bp.route('/parking/get/<parking_id>', methods=['GET'])
+def get_parking_space(parking_id):
+    db_manager = current_app.db_manager
+    parking_space = ParkingSpace.load_from_db(db_manager, parking_id)
+
+    if parking_space:
+        # Convert the ParkingSpace object to a dictionary for JSON serialization
+        parking_space_data = {
+            "id": parking_space.id,
+            "owner_email": parking_space.owner_email,
+            "location_address": parking_space.location_address,
+            "gps_coordinates": parking_space.gps_coordinates,
+            "description": parking_space.description,
+            "base_price": parking_space.base_price,
+            "dynamic_pricing": parking_space.dynamic_pricing
+        }
+        return jsonify(parking_space_data), 200
+
+    return jsonify({"message": "Parking space not found"}), 404
+
+
 @parking_bp.route('/parking/<parking_id>', methods=['DELETE'])
 def delete_parking_space(parking_id):
     db_manager = current_app.db_manager
