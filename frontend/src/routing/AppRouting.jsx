@@ -9,6 +9,10 @@ import App from "../App";
 import SignInPage from "../pages/sign-in-page/SignInPage";
 import SignUpPage from "../pages/sign-up-page/SignUpPage";
 import WelcomePage from "../pages/welcome-page/WelcomePage";
+import Dashboard from "../pages/welcome-page/Dashboard";
+import RegisterParking from "../pages/parking-rent/RegisterParking";
+import ShareParkingMenu from "../pages/parking-rent/ShareParkingMenu";
+import SelectParking from "../pages/parking-book/SelectParking";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,11 +25,12 @@ export const router = createBrowserRouter(
 
         {/* rute user */}
         <Route>
-          <Route path="welcome" element={<WelcomePage />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="ride-sharing" element={<WelcomePage />} />
           <Route path="ride-searching" element={<WelcomePage />} />
-          <Route path="parking-book" element={<WelcomePage />} />
-          <Route path="parking-rent" element={<WelcomePage />} />
+          <Route path="register-parking" element={<RegisterParking />} />
+          <Route path="parking-book" element={<SelectParking />} />
+          <Route path="parking-rent" element={<ShareParkingMenu />} />
         </Route>
       </Route>
     </>

@@ -6,6 +6,7 @@ const LoginScreen = () => {
   const navigate = useNavigate();
 
   return (
+    
     <Box
       sx={{
         display: 'flex',
@@ -14,18 +15,19 @@ const LoginScreen = () => {
         flexDirection: 'column',
         color: '#fff',
         textAlign: 'center',
+        
       }}
     >
-      <Typography variant="h4" sx={{ mb: 1 }}>
+      <Typography variant="h3" sx={{ mb: 1 , mt:20}}>
         App name title
       </Typography>
-      <Typography variant="h6" sx={{ mb: 4 }}>
+      <Typography variant="h5" sx={{ mb: 4 }}>
         Let’s start
       </Typography>
       <Avatar
         sx={{
-          width: 100,
-          height: 100,
+          width: 200,
+          height: 200,
           bgcolor: '#ccc',
           mb: 4,
         }}
@@ -37,19 +39,22 @@ const LoginScreen = () => {
         sx={{
           mb: 2,
           px: 5,
+          fontSize: 20,
+          width: 230,
+          borderRadius: 5
         }}
       >
         Log in
       </Button>
-      <Typography variant="body2">
-        Don’t have an account?{' '}
+      <Typography variant="h6">
+      Don’t have an account?{' '}
         <Button
           variant="text"
-          color="success"
-          sx={{ textTransform: 'none' }}
+         color="success"
+          sx={{ textTransform: 'none', fontSize: 20 }}
           onClick={() => navigate('/sign-up')}
         >
-          Sign up
+        Sign up
         </Button>
       </Typography>
     </Box>

@@ -19,7 +19,7 @@ const WelcomePage = () => {
         background: 'linear-gradient(to bottom, #673AB7, #512DA8)'
       }}
     >
-      {isLoggedIn ? <Dashboard /> : <LoginScreen onLogin={handleLogin} />}
+      <LoginScreen />
     </Box>
   );
 };

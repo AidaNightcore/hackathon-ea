@@ -1,9 +1,19 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Box, Typography, Button, TextField, Avatar } from '@mui/material';
 
+
 const SignInPage = ({ onLogin, onSignUp }) => {
+  const navigate = useNavigate();
+
   return (
+    <Box
+    sx={{
+      width: '100vw',
+      height: '100vh',
+      background: 'linear-gradient(to bottom, #673AB7, #512DA8)'
+    }}>
     <Box
       sx={{
         display: 'flex',
@@ -14,8 +24,8 @@ const SignInPage = ({ onLogin, onSignUp }) => {
         textAlign: 'center',
       }}
     >
-      <Avatar sx={{ width: 100, height: 100, bgcolor: '#ccc', mb: 4 }} />
-      <Box sx={{ width: '80%', maxWidth: 300 }}>
+      <Avatar sx={{ width: 150, height: 150, bgcolor: '#ccc', mb: 4, mt:10 }} />
+      <Box sx={{ width: '80%', maxWidth: 300,  }}>
         <TextField
           label="Email Address"
           fullWidth
@@ -39,7 +49,7 @@ const SignInPage = ({ onLogin, onSignUp }) => {
         <Button
           variant="contained"
           color="success"
-          onClick={onLogin}
+          onClick={() => navigate('/dashboard')}
           fullWidth
           sx={{ mb: 2 }}
         >
@@ -48,13 +58,14 @@ const SignInPage = ({ onLogin, onSignUp }) => {
         <Button
           variant="text"
           color="inherit"
-          onClick={onSignUp}
+          onClick={() => navigate('/sign-up')}
           fullWidth
           sx={{ textTransform: 'none' }}
         >
           Don’t have an account? Sign up
         </Button>
       </Box>
+    </Box>
     </Box>
   );
 };
